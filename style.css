@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.slider {
+    display: flex;
+    height: 100vh;
+}
+
+input[type='radio'] {
+    appearance: none;
+}
+
+input[type='radio']:checked + .slide {
+    flex-grow: 6;
+}
+
+.slide{
+    width: 0;
+    flex-grow: 1;
+    transition: all 0.4s ease-in-out;
+    display: grid;
+    align-items: end;
+    padding: 4vw 20px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    outline: 0.6px solid rgba(255,255,255, 0.5);
+}
+
+.slide:after, .slide:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.slide:before {
+    background: var(--img) center / cover;
+}
+
+.slide:after {
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+}
+
+.name {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    writing-mode: vertical-lr;
+    transition: all 0.4s ease-in-out;
+}
+
+.content {
+    position: absolute;
+    left: 60px;
+    bottom: -50vh;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.desc {
+    width: 40vw;
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.4em;
+}
+
+/*SLide Active*/
+
+input[type='radio']:checked + .slide {
+    flex-grow: 6;
+}
+
+input[type='radio']:checked + .slide .name {
+    bottom: -500px;
+}
+
+input[type='radio']:checked + .slide .content {
+    bottom: 5vw;
+    opacity: 1;
+}
+.card {
+    position: absolute;
+    cursor: pointer;
+    width: 300px;
+    height: 380px;
+    box-shadow: 0 60px 60px -50px black;
+    border-radius: 10px;
+    color: transparent;
+    padding: 16px;
+    display: grid;
+    align-content: space-between;
+    background-size: 330px;
+    outline: 1px solid transparent;
+    outline-offset: -8px;
+    transition: all 0.7s;
+    transform: translateX(685px);
+    margin-bottom: 45px;
+}
+
+.card:hover {
+    outline: 1px solid white;
+    color: white;
+    text-shadow: 0 2px 4px black;
+}
+
+.card_title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card_social {
+    display: grid;
+    grid-gap: 8px;
+    font-size: 18px;
+}
+
+.card1 {
+    background: url("https://ilarge.lisimg.com/image/7809335/740full-sam-worthington.jpg")
+    center no-repeat;
+    background-size: 390px;
+    background-position: 45% 10%;
+}
+
+.card1:hover{
+    background-size: 700px;
+    background-position: 13% 16%;
+}
+
+.card2 {
+    background: url("http://magazineclonerepub.blob.core.windows.net/mcepub/427/202594/image/aaeb3b7e-dbd3-44fb-b852-c768359ca073.jpg");
+    background-size: 380px;
+    background-position: 50% 20%;
+}
+
+.card2:hover{
+    background-size: 550px;
+    background-position: -4% 30%;
+}
+
+.card3 {
+    background: url("https://i.pinimg.com/originals/31/12/f5/3112f586e6801fbfa14236fd016d933e.jpg");
+    background-size: 320px;
+    background-position: 10% 5%;
+}
+
+.card3:hover{
+    background-size: 470px;
+    background-position: -21% 10%;
+}
+.card4 {
+    background: url("https://i.pinimg.com/originals/c6/18/36/c61836bc34a452ae284ccff0dbf3e449.jpg");
+    background-size: 580px;
+    background-position: 40% 0%
+}
+.card4:hover{
+    background-size: 999px;
+    background-position: 21% 10%;
+}
+.card5 {
+    background: url("https://yobte.ru/uploads/posts/2020-01/kristian-bejl-51-foto-4.jpg");
+    background-size: 425px;
+    background-position: 30% 0%;
+}
+.card5:hover {
+    background-size: 590px;
+    background-position: 0% 20%;
+}
+
+
+/*Adaptive*/
+@media (max-width: 1000px) {
+    .slider {
+
+    }
+}
